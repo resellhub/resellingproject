@@ -8,85 +8,36 @@
   <style>
     /* Modal styles */
     .modal {
-      display: none;
+      display: none !important;
       position: fixed;
-      z-index: 100;
+      z-index: 1000;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.6);
     }
     .modal-content {
       background-color: #fefefe;
       margin: 10% auto;
       padding: 20px;
       border-radius: 10px;
-      width: 80%;
+      width: 90%;
       max-width: 400px;
       text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     .close {
-      color: #aaa;
+      color: #333;
       float: right;
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
     }
     .close:hover {
-      color: black;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ResellingProject</h1>
-    <nav>
-      <a href="#">Home Page</a>
-      <a href="#products">Products</a>
-      <a href="#">Help</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Welcome to ResellingProject!</h2>
-    <p>Check out our products at unique prices.</p>
-    <a href="#products" class="btn">Check out our products</a>
-  </section>
-
-  <section id="products" class="products">
-    <h2>Our plans</h2>
-    <div class="product-list">
-     
-      <!-- Product 1 -->
-      <div class="product">
-        <img src="Discord icon.jpg" alt="N1tr0 b4sic">
-        <h3>N1tr0 b4sic</h3>
-        <span class="price">€0.50</span>
-        <button onclick="openModal('N1tr0 b4sic')">View Details</button>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="product">
-        <img src="Discord icon.jpg" alt="N1tr0 b00st">
-        <h3>N1tr0 b00st</h3>
-        <span class="price">€1.70</span>
-        <button onclick="openModal('N1tr0 b00st')">View Details</button>
-      </div>
-
-      <!-- Product 3 -->      
-      <div class="product">        
-        <img src="Discord icon.jpg" alt="random D3co">        
-        <h3>random D3co</h3>        
-        <span class="price">€0.80</span>        
-        <button onclick="openModal('random D3co')">View Details</button>      
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Modal structure -->
+      color: red;
+  <!-- Modal -->
   <div id="paymentModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -116,7 +67,6 @@
       modal.style.display = 'none';
     }
 
-    // Κλείσιμο modal αν κάνεις κλικ έξω από αυτό
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = 'none';
